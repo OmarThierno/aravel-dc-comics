@@ -5,6 +5,7 @@
         <h1>Show</h1>
 
         <div>{{ $comic->title }}</div>
-        <img src="{{$comic->thumb}}" alt="{{$comic->title}}">
+        <img class="w-25" src="{{$comic->thumb}}" alt="{{$comic->title}}">
+        <div>{{$comic->price}}</div>
     </div>
 @endsection

@@ -15,7 +15,10 @@
               <h5 class="card-title">{{$comic->title}}</h5>
               <p class="card-text">{{$comic->series}}</p>
               <p class="card-text">{{$comic->type}}</p>
-              <a href="{{route('comics.show', ['comic' => $comic->id])}}" class="btn btn-primary ms_btn">Details</a>
+              <div class="ms_btn d-flex">
+                <a href="{{route('comics.show', ['comic' => $comic->id])}}" class="btn btn-primary me-2">Details</a>
+                <a href="{{route('comics.edit', ['comic' => $comic->id])}}" class="btn btn-warning">Modify</a>
+              </div>
             </div>
           </div>
         </div>
