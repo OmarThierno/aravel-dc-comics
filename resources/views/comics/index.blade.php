@@ -4,7 +4,10 @@
     <div class="container">
         <div class="d-flex justify-content-between align-items-center">
             <h1>Comics</h1>
-            <a href="{{ route('comics.create') }}" class="btn btn-primary">Create</a>
+            <div>
+                <a href="{{ route('comics.create') }}" class="btn btn-primary">Create</a>
+                <a href="{{route('cestino')}}" class="btn btn-warning">Cestino</a>
+            </div>
         </div>
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-3 py-4">
             @foreach ($comics as $comic)

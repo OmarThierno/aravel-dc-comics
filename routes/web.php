@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Adim\ComicController;
+use App\Http\Controllers\CestinoComicController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,3 +20,5 @@ Route::get('/', function () {
 });
 
 Route::resource('comics', ComicController::class);
+
+Route::get('/cestino', [CestinoComicController::class, 'cestino'])->name('cestino');
