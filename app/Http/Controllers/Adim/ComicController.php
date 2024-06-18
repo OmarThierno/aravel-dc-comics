@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Adim;
 
 use App\Models\Comic;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreComicRequest;
+use App\Http\Requests\UpdateComicRequest;
 use Illuminate\Http\Request;
 
 class ComicController extends Controller
@@ -29,8 +31,16 @@ class ComicController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreComicRequest $request)
     {
+        // $request->validate([
+        //     'title' => ['required', 'min:3'],
+        //     'type' => ['required'],
+        //     'price' => ['required'],
+        //     'sale_date' => ['required'],
+        // ], [
+        //     'title.required' => 'il titolo è richiesto'
+        // ]);
         $data = $request->all();
         $comic = new Comic();
         $comic->fill($data);
@@ -59,7 +69,7 @@ class ComicController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Comic $comic)
+    public function update(UpdateComicRequest $request, Comic $comic)
     {
         $data = $request->all();
         $comic->update($data);
