@@ -21,4 +21,8 @@ Route::get('/', function () {
 
 Route::resource('comics', ComicController::class);
 
-Route::get('/cestino', [CestinoComicController::class, 'cestino'])->name('cestino');
+Route::get('/baskets', [CestinoComicController::class, 'index'])->name('cestino');
+
+Route::put('/baskets/{bascket}', [CestinoComicController::class, 'restoration'])->name('restoration');
+
+Route::delete('/baskets/{bascket}', [CestinoComicController::class, 'delete'])->name('delete');
